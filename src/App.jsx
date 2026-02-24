@@ -1,27 +1,22 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
-const Index = () => {
+const App = () => {
 
-  const demoRef = useRef(null);
-
-  const Change = () => {
-    demoRef.current.src = "https://placehold.co/600x400/000000/FFF";
-
-    demoRef.current.style.height = "900px";
-    demoRef.current.style.width = "600px";
-  };
+  const [number, setNumber] = useState(11);
 
   return (
     <div>
-      <img
-        src="https://placehold.co/600x400/000000/FFF"
-        ref={demoRef}
-        alt="demo"
-      />
+      <h1>Number: {number}</h1>
 
-      <button onClick={Change}>Submit</button>
+      <button onClick={() => setNumber(prev => prev + 1)}>
+        Increase
+      </button>
+
+      <button onClick={() => setNumber(prev => prev - 1)}>
+        Decrease
+      </button>
     </div>
   );
 };
 
-export default Index;
+export default App;
