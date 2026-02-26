@@ -1,0 +1,97 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1877f2, #42a5f5, #66bb6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form Container */
+.container {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(224, 235, 239, 0.823);
+}
+
+/* Form Title (optional if you add one) */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1877f2;
+}
+
+/* Inputs, Select, Textarea */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 16px 18px;  /* Slightly bigger */
+  margin: 10px 0;
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1877f2;
+  box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.2);
+}
+
+/* Radio + Checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+label {
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Button Hover */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+}
+
+/* Small Responsive Adjustment */
+@media (max-width: 500px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
