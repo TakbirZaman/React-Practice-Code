@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Registration from "./pages/Registration";
+import UserProfile from "./pages/UserProfile";
+import Products from "./pages/Products";
+import NotFound from "./pages/NotFound";
 
-const Index = () => {
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    fetch("https://dummyjson.com/products/1")
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((err) => console.log(err));
-  }, []);
-
+const App = () => {
   return (
-    <div>
-      {JSON.stringify(data)}
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Register</Link> |{" "}
+        <Link to="/profile">Profile</Link> |{" "}
+        <Link to="/products">Products</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Registration />} />
+        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
-export default Index;
+export default App;
